@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "async-http-client",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/The-Igor/async-http-client.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0f02a1d750f0f35e5cc770c85ead7c9f65beef39"
+      }
+    },
+    {
+      "identity" : "replicate-kit-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/The-Igor/replicate-kit-swift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "787133795043b8fd72573489fd1996ba681a525f"
+      }
+    },
+    {
+      "identity" : "retry-policy-service",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/The-Igor/retry-policy-service.git",
+      "state" : {
+        "revision" : "46ded002161a95c6b08ddd02c3f319891c773d14",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "some-codable-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/The-Igor/some-codable-swift.git",
+      "state" : {
+        "revision" : "45e21ff0206d4feabeb5df7ea97784331b399fc9",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
