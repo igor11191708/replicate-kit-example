@@ -8,6 +8,4 @@ Replicate is a service that lets you run machine learning models with a few line
 
 ## SwiftUI example for the package
 
- [Replicate kit](https://github.com/The-Igor/replicate-kit-swift) 
- 
-![The concept](https://github.com/The-Igor/replicate-kit-swift/blob/main/img/image_02.png) 
+ [Replicate kit](https://github.com/The-Igor/replicate-kit-swift)
