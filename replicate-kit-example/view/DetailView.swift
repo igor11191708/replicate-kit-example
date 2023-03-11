@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import replicate_kit_swift
 
 struct DetailView: View{
     
@@ -56,6 +56,7 @@ struct DetailView: View{
                 Rectangle()
                     .fill(.clear)
                     .overlay(Text(error))
+                    .padding()
             }else{
                 Rectangle()
                     .fill(.clear)
@@ -96,8 +97,12 @@ struct DetailView: View{
                 do{
                     image = try await viewModel.createPrediction(for: item)
                 }catch{
-                    self.error = error.localizedDescription
-
+                    if case ReplicateAPI.Errors.read(let e) = error {
+                        self.error = e.description
+                    }else{
+                        self.error = error.localizedDescription
+                    }
+ 
                     if let e = error as? ReplicateClient.Errors, e == .outputIsEmpty{
                         clear()
                     }
