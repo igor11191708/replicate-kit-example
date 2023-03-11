@@ -1,4 +1,4 @@
-# SwiftUI example for replicate toolkit for swift
+# SwiftUI example for replicate swift toolkit
 
 Replicate is a service that lets you run machine learning models with a few lines of code, without needing to understand how machine learning works. This package is the swift layer between Replicate API and your application.
  
