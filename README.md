@@ -2,7 +2,7 @@
 
 Replicate is a service that lets you run machine learning models with a few lines of code, without needing to understand how machine learning works. This package is the swift layer between Replicate API and your application.
  
- ## How to start ?! 
+ ## How to use ?! 
  Check out notes here 
  [replicate kit](https://github.com/The-Igor/replicate-kit-swift)
  
