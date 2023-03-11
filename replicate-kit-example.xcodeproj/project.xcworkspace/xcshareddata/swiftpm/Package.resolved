@@ -6,7 +6,7 @@
       "location" : "https://github.com/The-Igor/async-http-client.git",
       "state" : {
         "branch" : "main",
-        "revision" : "0f02a1d750f0f35e5cc770c85ead7c9f65beef39"
+        "revision" : "7ed3dce8797b8a0716a13ca5a58e49ddbbd7d8fd"
       }
     },
     {
@@ -15,7 +15,7 @@
       "location" : "https://github.com/The-Igor/replicate-kit-swift.git",
       "state" : {
         "branch" : "main",
-        "revision" : "787133795043b8fd72573489fd1996ba681a525f"
+        "revision" : "79e50e18eb74a3c7fca9eb365a3bfb6df27df942"
       }
     },
     {

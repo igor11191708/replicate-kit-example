@@ -6,6 +6,7 @@
 //
 
 import replicate_kit_swift
+import async_http_client
 import SwiftUI
 
 final class ReplicateClient : ObservableObject{
@@ -61,20 +62,25 @@ final class ReplicateClient : ObservableObject{
     /// - Parameter stringUrl: String url
     /// - Returns: Data for image
     private func loadData(for stringUrl : String) async throws -> Data{
+        
         guard let url = URL(string: stringUrl) else{
            throw Errors.urlOutputIsNotValid
         }
-        // TODO: elaborate on this line
-        return try await URLSession.shared.data(from: url).0
+        
+        let (data, response) = try await Http.Get.from(url)
+
+        return try validate(response, and: data)
+
     }
     
     // MARK: - Inner
     
-    enum Errors : Error{
+    enum Errors : Error, Hashable{
         case latestVersionIsEmpty
         case outputIsEmpty
         case imageInit
         case urlOutputIsNotValid
+        case invalidImageResponse(URLResponse)
     }
     
 }
@@ -106,3 +112,11 @@ final class ReplicateClient : ObservableObject{
         throw ReplicateClient.Errors.imageInit
     }
 #endif
+
+
+fileprivate func validate(_ response : URLResponse,and data : Data) throws -> Data {
+    switch (response as? HTTPURLResponse)?.statusCode {
+        case (200..<300)?: return data
+    default: throw ReplicateClient.Errors.invalidImageResponse(response)
+    }
+}
