@@ -84,39 +84,3 @@ final class ReplicateClient : ObservableObject{
     }
     
 }
-
-// MARK: - File private
-
-#if os(iOS) || os(watchOS) || os(tvOS)
-    /// - Parameter data: Data
-    /// - Returns: Image based on UIImage
-    fileprivate func image(from data: Data?) throws -> Image {
-
-        if let data, let image = UIImage(data: data){
-            return Image(uiImage: image)
-        }
-        
-        throw ReplicateClient.Errors.imageInit
-    }
-#endif
-    
-#if os(macOS)
-    /// - Parameter data: Data
-    /// - Returns: Image based on NSImage
-    fileprivate func image(from data: Data?) throws -> Image {
-        
-        if let data, let image = NSImage(data: data){
-            return Image(nsImage: image)
-        }
-        
-        throw ReplicateClient.Errors.imageInit
-    }
-#endif
-
-
-fileprivate func validate(_ response : URLResponse,and data : Data) throws -> Data {
-    switch (response as? HTTPURLResponse)?.statusCode {
-        case (200..<300)?: return data
-    default: throw ReplicateClient.Errors.invalidImageResponse(response)
-    }
-}

@@ -16,6 +16,8 @@
 		781E352E29B9BBBA00045C8E /* IModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E352D29B9BBBA00045C8E /* IModel.swift */; };
 		781E353529B9C6EB00045C8E /* ReplicateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E353429B9C6EB00045C8E /* ReplicateClient.swift */; };
 		781E353A29BA1ACC00045C8E /* InputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E353929BA1ACC00045C8E /* InputModel.swift */; };
+		78B2704929BC8CC100C88397 /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B2704829BC8CC100C88397 /* HttpHelper.swift */; };
+		78B2704B29BC8CE500C88397 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B2704A29BC8CE500C88397 /* ImageHelper.swift */; };
 		78FDE6B229BB720200615C31 /* some-codable-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 78FDE6B129BB720200615C31 /* some-codable-swift */; };
 		78FDE6B529BB72B500615C31 /* replicate-kit-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 78FDE6B429BB72B500615C31 /* replicate-kit-swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,8 @@
 		781E352D29B9BBBA00045C8E /* IModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IModel.swift; sourceTree = "<group>"; };
 		781E353429B9C6EB00045C8E /* ReplicateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplicateClient.swift; sourceTree = "<group>"; };
 		781E353929BA1ACC00045C8E /* InputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModel.swift; sourceTree = "<group>"; };
+		78B2704829BC8CC100C88397 /* HttpHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHelper.swift; sourceTree = "<group>"; };
+		78B2704A29BC8CE500C88397 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 		781E351529B9B13E00045C8E /* replicate-kit-example */ = {
 			isa = PBXGroup;
 			children = (
+				78B2704729BC8CB000C88397 /* helper */,
 				78FDE6A929BA38AC00615C31 /* protocol */,
 				781E353629B9C8E100045C8E /* client */,
 				781E352C29B9BBA700045C8E /* model */,
@@ -118,6 +123,15 @@
 				781E353429B9C6EB00045C8E /* ReplicateClient.swift */,
 			);
 			path = client;
+			sourceTree = "<group>";
+		};
+		78B2704729BC8CB000C88397 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				78B2704829BC8CC100C88397 /* HttpHelper.swift */,
+				78B2704A29BC8CE500C88397 /* ImageHelper.swift */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 		78FDE6A929BA38AC00615C31 /* protocol */ = {
@@ -216,7 +230,9 @@
 			files = (
 				781E352929B9B41600045C8E /* DetailView.swift in Sources */,
 				781E351929B9B13E00045C8E /* ContentView.swift in Sources */,
+				78B2704B29BC8CE500C88397 /* ImageHelper.swift in Sources */,
 				781E352E29B9BBBA00045C8E /* IModel.swift in Sources */,
+				78B2704929BC8CC100C88397 /* HttpHelper.swift in Sources */,
 				781E352B29B9BB6200045C8E /* SideBar.swift in Sources */,
 				781E353529B9C6EB00045C8E /* ReplicateClient.swift in Sources */,
 				781E351729B9B13E00045C8E /* replicate_kit_exampleApp.swift in Sources */,
