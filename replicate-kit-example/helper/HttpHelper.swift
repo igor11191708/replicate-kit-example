@@ -8,7 +8,7 @@
 import Foundation
 
 
-func validate(_ response : URLResponse,and data : Data) throws -> Data {
+func validate(_ response : URLResponse, and data : Data) throws -> Data {
     switch (response as? HTTPURLResponse)?.statusCode {
         case (200..<300)?: return data
     default: throw ReplicateClient.Errors.invalidImageResponse(response)
