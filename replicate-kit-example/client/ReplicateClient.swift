@@ -11,11 +11,13 @@ import SwiftUI
 
 final class ReplicateClient : ObservableObject{
     
+    private(set) var model : Model?
+    
     private let api : ReplicateAPI
     
     init(){
         let url = URL(string: ReplicateAPI.Endpoint.baseURL)!
-        let apiKey = ""
+        let apiKey = "r8_L9CDDYDoAAyCrus0WhY22K7dAlx0rYE0t7Fjn"
         api = ReplicateAPI(baseURL: url, apiKey: apiKey)
     }
     
@@ -23,9 +25,9 @@ final class ReplicateClient : ObservableObject{
     
     func createPrediction(for input : InputModel) async throws -> Image{
         
-        let model = try await getModel(for: input)
+        model = try await getModel(for: input)
         
-        guard let latest = model.latestVersion else {
+        guard let latest = model?.latestVersion else {
             throw Errors.latestVersionIsEmpty
         }
             

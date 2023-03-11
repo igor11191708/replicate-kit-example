@@ -38,14 +38,33 @@ struct DetailView: View{
                     Image(systemName: "photo.circle")
                     Text(selected.name)
                 }
+                if let url =  viewModel.model?.github_url{
+                    HStack{
+                        Image(systemName: "icloud.circle")
+                        Link("Github url", destination: url)
+                    }
+                }
+                
                 Spacer()
             }.padding(.bottom)
+            
             HStack(alignment: .top){
                 Text("Params")
                 Text(encode)
                     .fontWeight(.regular)
             }
             .font(.body)
+            .padding(.bottom)
+            
+            if let description =  viewModel.model?.description{
+                HStack(alignment: .top){
+                    Text("Description")
+                    Text(description)
+                        .fontWeight(.regular)
+                }
+                .font(.body)
+            }
+            
             Spacer()
             if let image{
                 image
