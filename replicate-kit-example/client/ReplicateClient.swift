@@ -17,7 +17,7 @@ final class ReplicateClient : ObservableObject{
     
     init(){
         let url = URL(string: ReplicateAPI.Endpoint.baseURL)!
-        let apiKey = "r8_L9CDDYDoAAyCrus0WhY22K7dAlx0rYE0t7Fjn"
+        let apiKey = ""
         api = ReplicateAPI(baseURL: url, apiKey: apiKey)
     }
     
