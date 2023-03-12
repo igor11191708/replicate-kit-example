@@ -24,7 +24,7 @@ final class ReplicateClient : ObservableObject{
     // MARK: - API
     
     func createPrediction(for input : InputModel) async throws -> Image{
-        
+        model = nil
         model = try await getModel(for: input)
         
         guard let latest = model?.latestVersion else {

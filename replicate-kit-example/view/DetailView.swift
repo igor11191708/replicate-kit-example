@@ -1,5 +1,5 @@
 //
-//  StableDdiffusion.swift
+//  DetailView.swift
 //  replicate-kit-example
 //
 //  Created by Igor on 09.03.2023.
@@ -14,57 +14,19 @@ struct DetailView: View{
     
     @Binding var selected : InputModel
     
-    @State var error : String?
+    // MARK: - Private
     
-    @State var image : Image?
+    @State private var error : String?
     
-    @State var task : Task<(),Never>?
+    @State private var image : Image?
     
-    var encode : String{
-        let model = selected
-        guard let data = try? JSONEncoder().encode(model) else { return ""}
-        
-        return String(decoding: data, as: UTF8.self)
-    }
+    @State private var task : Task<(),Never>?
+    
+    // MARK: - Life circle
     
     var body: some View{
         VStack(alignment: .leading){
-            HStack(spacing: 15){
-                HStack{
-                    Image(systemName: "person.crop.circle")
-                    Text(selected.owner)
-                }
-                HStack{
-                    Image(systemName: "photo.circle")
-                    Text(selected.name)
-                }
-                if let url =  viewModel.model?.github_url{
-                    HStack{
-                        Image(systemName: "icloud.circle")
-                        Link("Github url", destination: url)
-                    }
-                }
-                
-                Spacer()
-            }.padding(.bottom)
-            
-            HStack(alignment: .top){
-                Text("Params")
-                Text(encode)
-                    .fontWeight(.regular)
-            }
-            .font(.body)
-            .padding(.bottom)
-            
-            if let description =  viewModel.model?.description{
-                HStack(alignment: .top){
-                    Text("Description")
-                    Text(description)
-                        .fontWeight(.regular)
-                }
-                .font(.body)
-            }
-            
+            HeaderTpl(selected: $selected, model: viewModel.model)
             Spacer()
             if let image{
                 image
@@ -84,10 +46,10 @@ struct DetailView: View{
         }
         .font(.title2)
         .padding()
-        .onChange(of: selected){item in
-                        cancelTask()
-                        clear()
-                        task = getTask(by: item)
+        .onChange(of: selected){ item in
+            cancelTask()
+            clear()
+            task = getTask(by: item)
         }
         .onAppear{
             task = getTask(by: selected)
@@ -97,6 +59,8 @@ struct DetailView: View{
             clear()
         }
     }
+    
+    // MARK: - Private
     
     @MainActor
     private func clear(){
@@ -110,24 +74,31 @@ struct DetailView: View{
         task = nil
     }
     
+    
+    /// Get task with a prediction
+    /// - Parameter item: Input description
+    /// - Returns: Task running prediction
     private func getTask( by item : InputModel) -> Task<(),Never>? {
 
-        let task = Task{
-                do{
-                    image = try await viewModel.createPrediction(for: item)
-                }catch{
-                    if case ReplicateAPI.Errors.read(let e) = error {
-                        self.error = e.description
-                    }else{
-                        self.error = error.localizedDescription
-                    }
- 
-                    if let e = error as? ReplicateClient.Errors, e == .outputIsEmpty{
-                        clear()
-                    }
-                }
-            }
-        
-        return task
+       Task{
+            do{ image = try await viewModel.createPrediction(for: item)
+            }catch{ handle(error) }
+        }
+    }
+    
+    /// Handle error
+    /// - Parameter error: Error
+    private func handle(_ error : Error){
+
+        if case ReplicateAPI.Errors.read(let e) = error {
+            self.error = e.description
+        }else{
+            self.error = error.localizedDescription
+        }
+
+        if let e = error as? ReplicateClient.Errors,
+               e == .outputIsEmpty{
+            clear()
+        }
     }
 }

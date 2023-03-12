@@ -19,6 +19,7 @@
 		78B2704929BC8CC100C88397 /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B2704829BC8CC100C88397 /* HttpHelper.swift */; };
 		78B2704B29BC8CE500C88397 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B2704A29BC8CE500C88397 /* ImageHelper.swift */; };
 		78B2704D29BC91A300C88397 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78B2704C29BC91A300C88397 /* README.md */; };
+		78B2704F29BD982F00C88397 /* HeaderTpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B2704E29BD982F00C88397 /* HeaderTpl.swift */; };
 		78FDE6B229BB720200615C31 /* some-codable-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 78FDE6B129BB720200615C31 /* some-codable-swift */; };
 		78FDE6B529BB72B500615C31 /* replicate-kit-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 78FDE6B429BB72B500615C31 /* replicate-kit-swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		78B2704829BC8CC100C88397 /* HttpHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHelper.swift; sourceTree = "<group>"; };
 		78B2704A29BC8CE500C88397 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		78B2704C29BC91A300C88397 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		78B2704E29BD982F00C88397 /* HeaderTpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				781E352829B9B41600045C8E /* DetailView.swift */,
 				781E352A29B9BB6200045C8E /* SideBar.swift */,
+				78B2704E29BD982F00C88397 /* HeaderTpl.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				781E352929B9B41600045C8E /* DetailView.swift in Sources */,
 				781E351929B9B13E00045C8E /* ContentView.swift in Sources */,
 				78B2704B29BC8CE500C88397 /* ImageHelper.swift in Sources */,
+				78B2704F29BD982F00C88397 /* HeaderTpl.swift in Sources */,
 				781E352E29B9BBBA00045C8E /* IModel.swift in Sources */,
 				78B2704929BC8CC100C88397 /* HttpHelper.swift in Sources */,
 				781E352B29B9BB6200045C8E /* SideBar.swift in Sources */,
