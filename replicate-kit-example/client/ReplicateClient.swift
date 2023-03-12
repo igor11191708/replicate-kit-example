@@ -69,9 +69,9 @@ final class ReplicateClient : ObservableObject{
            throw Errors.urlOutputIsNotValid
         }
         
-        let (data, response) = try await Http.Get.from(url)
+        let result = try await Http.Get.from(url)
 
-        return try validate(response, and: data)
+        return try validate(result)
 
     }
     
