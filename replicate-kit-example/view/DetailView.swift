@@ -74,12 +74,10 @@ struct DetailView: View{
         task = nil
     }
     
-    
     /// Get task with a prediction
     /// - Parameter item: Input description
     /// - Returns: Task running prediction
     private func getTask( by item : InputModel) -> Task<(),Never>? {
-
        Task{
             do{ image = try await viewModel.createPrediction(for: item)
             }catch{ handle(error) }
@@ -89,7 +87,7 @@ struct DetailView: View{
     /// Handle error
     /// - Parameter error: Error
     private func handle(_ error : Error){
-
+        /// Expose logical error from Replicate
         if case ReplicateAPI.Errors.read(let e) = error {
             self.error = e.description
         }else{
