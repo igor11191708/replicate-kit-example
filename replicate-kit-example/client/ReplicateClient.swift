@@ -70,7 +70,7 @@ final class ReplicateClient : ObservableObject{
         }
         
         let (data, response) = try await Http.Get.from(url)
-        let rule : [Http.Validate.Status] = [.range(200..<300)]
+        let rule : Http.Validate.Status = .range(200..<300)
         try validateStatus(response, by: rule)
         
         return data
