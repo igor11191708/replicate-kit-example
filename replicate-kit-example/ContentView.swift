@@ -6,12 +6,6 @@
 //
 
 import SwiftUI
-import replicate_kit_swift
-import some_codable_swift
-
-struct User: Encodable{
-    let name: String
-}
 
 struct ContentView: View {
     
