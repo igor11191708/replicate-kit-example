@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/The-Igor/async-http-client.git",
       "state" : {
-        "revision" : "156bb8d3d5bfa6d983060b95c4d0a1d10de29e4b",
-        "version" : "1.4.0"
+        "revision" : "3b1bf7ec199a05e3cff879e418487eae163d7455",
+        "version" : "1.4.2"
       }
     },
     {
@@ -15,7 +15,7 @@
       "location" : "https://github.com/The-Igor/replicate-kit-swift.git",
       "state" : {
         "branch" : "main",
-        "revision" : "23635ab7ed465de5801879c7c7d512cdd7a03450"
+        "revision" : "c763e967fb010d55c15361c47fd87a731870ea05"
       }
     },
     {
