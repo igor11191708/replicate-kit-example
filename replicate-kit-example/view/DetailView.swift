@@ -88,11 +88,12 @@ struct DetailView: View{
     /// - Parameter error: Error
     private func handle(_ error : Error){
         /// Expose logical error from Replicate
-        if case ReplicateAPI.Errors.read(let e) = error {
-            self.error = e.description
-        }else{
-            self.error = error.localizedDescription
+
+        guard let e = error as? ResponseError else{
+            return self.error = error.localizedDescription
         }
+        
+        self.error = e.description
 
         if let e = error as? ReplicateClient.Errors,
                e == .outputIsEmpty{
