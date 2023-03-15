@@ -84,7 +84,5 @@ final class ReplicateClient : ObservableObject{
         case outputIsEmpty
         case imageInit
         case urlOutputIsNotValid
-        case invalidImageResponse(URLResponse)
     }
-    
 }
