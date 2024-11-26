@@ -46,7 +46,7 @@ final class ReplicateClient : ObservableObject{
     
     // MARK: - Private
     
-    /// Get model by desctription
+    /// Get model by description
     /// - Parameter item: Model params
     /// - Returns: Replicate model
     private func getModel(for item : InputModel) async throws -> Model{

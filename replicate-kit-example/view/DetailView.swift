@@ -12,15 +12,9 @@ struct DetailView: View{
     
     @EnvironmentObject var viewModel : ReplicateClient
     
+    @StateObject private var detailModel = DetailViewModel()
+    
     @Binding var selected : InputModel
-    
-    // MARK: - Private
-    
-    @State private var error : String?
-    
-    @State private var image : Image?
-    
-    @State private var task : Task<(),Never>?
     
     // MARK: - Life circle
     
@@ -28,12 +22,12 @@ struct DetailView: View{
         VStack(alignment: .leading){
             HeaderTpl(selected: $selected, model: viewModel.model)
             Spacer()
-            if let image{
+            if let image = detailModel.image{
                 image
                     .resizable()
                     .scaledToFit()
                 Spacer()
-            }else if let error{
+            }else if let error = detailModel.error{
                 Rectangle()
                     .fill(.clear)
                     .overlay(Text(error))
@@ -47,57 +41,28 @@ struct DetailView: View{
         .font(.title2)
         .padding()
         .onChange(of: selected){ item in
-            cancelTask()
-            clear()
-            task = getTask(by: item)
+            cancel()
+           start(by: item)
         }
         .onAppear{
-            task = getTask(by: selected)
+            start(by: selected)
         }
         .onDisappear{
-            cancelTask()
-            clear()
+            cancel()
         }
     }
     
     // MARK: - Private
-    
-    @MainActor
-    private func clear(){
-        error = nil
-        image = nil
-    }
-    
-    @MainActor
-    private func cancelTask(){
-        task?.cancel()
-        task = nil
-    }
-    
-    /// Get task with a prediction
-    /// - Parameter item: Input description
-    /// - Returns: Task running prediction
-    private func getTask( by item : InputModel) -> Task<(),Never>? {
-       Task{
-            do{ image = try await viewModel.createPrediction(for: item)
-            }catch{ handle(error) }
-        }
-    }
-    
-    /// Handle error
-    /// - Parameter error: Error
-    private func handle(_ error : Error){
-        /// Expose logical error from Replicate
 
-        guard let e = error as? ResponseError else{
-            return self.error = error.localizedDescription
-        }
-        
-        self.error = e.description
-
-        if let e = error as? ReplicateClient.Errors,
-               e == .outputIsEmpty{
-            clear()
+    func start(by item : InputModel){
+        detailModel.start{
+            try await viewModel.createPrediction(for: item)
         }
     }
+    
+    func cancel(){
+        detailModel.cancel()
+    }
+    
+
 }
