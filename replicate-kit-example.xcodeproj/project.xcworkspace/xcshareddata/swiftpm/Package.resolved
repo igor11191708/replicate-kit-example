@@ -1,40 +1,40 @@
 {
-  "originHash" : "791bbf4add4350f22074868524503c54590d9b911b33af3828b02fcd4dd02475",
+  "originHash" : "3e97b666d3239e0923083f75802c6aaa4a99126825796963575aed8048eef27f",
   "pins" : [
     {
       "identity" : "async-http-client",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/The-Igor/async-http-client.git",
       "state" : {
-        "revision" : "8be7d1c1f036350a8109b075052a71d3353ad366",
-        "version" : "1.4.4"
+        "revision" : "94d2573c14bb6b88110338a0f4f4cd7b0c6f3165",
+        "version" : "1.4.7"
       }
     },
     {
       "identity" : "replicate-kit-swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/The-Igor/replicate-kit-swift.git",
+      "kind" : "localSourceControl",
+      "location" : "/Users/igor/Documents/GitHub/replicate-kit-swift",
       "state" : {
-        "branch" : "main",
-        "revision" : "34255e2ddfa37dda894f9e24064ae9beb5e36033"
+        "revision" : "1b2583850bfa3f16ed611c48d61340fe5124b23d",
+        "version" : "1.0.1"
       }
     },
     {
       "identity" : "retry-policy-service",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/The-Igor/retry-policy-service.git",
+      "location" : "https://github.com/igor11191708/retry-policy-service.git",
       "state" : {
-        "revision" : "46ded002161a95c6b08ddd02c3f319891c773d14",
-        "version" : "1.0.0"
+        "revision" : "2a6a1f057fbf77337dfc73db98bd3d538127b3e2",
+        "version" : "1.0.1"
       }
     },
     {
       "identity" : "some-codable-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/The-Igor/some-codable-swift.git",
+      "location" : "https://github.com/igor11191708/some-codable-swift.git",
       "state" : {
-        "revision" : "45e21ff0206d4feabeb5df7ea97784331b399fc9",
-        "version" : "1.0.0"
+        "revision" : "41ef20eb935c9829b2cb45be63de3d0220352d18",
+        "version" : "1.0.1"
       }
     }
   ],

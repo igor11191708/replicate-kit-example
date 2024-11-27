@@ -17,11 +17,11 @@
 		781E353529B9C6EB00045C8E /* ReplicateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E353429B9C6EB00045C8E /* ReplicateClient.swift */; };
 		781E353A29BA1ACC00045C8E /* InputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E353929BA1ACC00045C8E /* InputModel.swift */; };
 		786796192CF6217A00352F7A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786796182CF6217500352F7A /* DetailViewModel.swift */; };
+		786796222CF7342800352F7A /* replicate-kit-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 786796212CF7342800352F7A /* replicate-kit-swift */; };
 		78B2704B29BC8CE500C88397 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B2704A29BC8CE500C88397 /* ImageHelper.swift */; };
 		78B2704D29BC91A300C88397 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78B2704C29BC91A300C88397 /* README.md */; };
 		78B2704F29BD982F00C88397 /* HeaderTpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B2704E29BD982F00C88397 /* HeaderTpl.swift */; };
 		78FDE6B229BB720200615C31 /* some-codable-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 78FDE6B129BB720200615C31 /* some-codable-swift */; };
-		78FDE6B529BB72B500615C31 /* replicate-kit-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 78FDE6B429BB72B500615C31 /* replicate-kit-swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78FDE6B229BB720200615C31 /* some-codable-swift in Frameworks */,
-				78FDE6B529BB72B500615C31 /* replicate-kit-swift in Frameworks */,
+				786796222CF7342800352F7A /* replicate-kit-swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +182,7 @@
 			name = "replicate-kit-example";
 			packageProductDependencies = (
 				78FDE6B129BB720200615C31 /* some-codable-swift */,
-				78FDE6B429BB72B500615C31 /* replicate-kit-swift */,
+				786796212CF7342800352F7A /* replicate-kit-swift */,
 			);
 			productName = "replicate-kit-example";
 			productReference = 781E351329B9B13E00045C8E /* Replicate kit.app */;
@@ -214,7 +214,7 @@
 			mainGroup = 781E350A29B9B13E00045C8E;
 			packageReferences = (
 				78FDE6B029BB720200615C31 /* XCRemoteSwiftPackageReference "some-codable-swift" */,
-				78FDE6B329BB72B500615C31 /* XCRemoteSwiftPackageReference "replicate-kit-swift" */,
+				786796202CF7342800352F7A /* XCRemoteSwiftPackageReference "replicate-kit-swift" */,
 			);
 			productRefGroup = 781E351429B9B13E00045C8E /* Products */;
 			projectDirPath = "";
@@ -468,34 +468,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		78FDE6B029BB720200615C31 /* XCRemoteSwiftPackageReference "some-codable-swift" */ = {
+		786796202CF7342800352F7A /* XCRemoteSwiftPackageReference "replicate-kit-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/The-Igor/some-codable-swift.git";
+			repositoryURL = "/Users/igor/Documents/GitHub/replicate-kit-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
 			};
 		};
-		78FDE6B329BB72B500615C31 /* XCRemoteSwiftPackageReference "replicate-kit-swift" */ = {
+		78FDE6B029BB720200615C31 /* XCRemoteSwiftPackageReference "some-codable-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/The-Igor/replicate-kit-swift.git";
+			repositoryURL = "https://github.com/igor11191708/some-codable-swift.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		786796212CF7342800352F7A /* replicate-kit-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 786796202CF7342800352F7A /* XCRemoteSwiftPackageReference "replicate-kit-swift" */;
+			productName = "replicate-kit-swift";
+		};
 		78FDE6B129BB720200615C31 /* some-codable-swift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 78FDE6B029BB720200615C31 /* XCRemoteSwiftPackageReference "some-codable-swift" */;
 			productName = "some-codable-swift";
-		};
-		78FDE6B429BB72B500615C31 /* replicate-kit-swift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 78FDE6B329BB72B500615C31 /* XCRemoteSwiftPackageReference "replicate-kit-swift" */;
-			productName = "replicate-kit-swift";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

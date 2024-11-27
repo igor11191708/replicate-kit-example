@@ -23,6 +23,8 @@ final class DetailViewModel : ObservableObject{
     // MARK: - API
     
     public func start(operation: @escaping Operation){
+        clear()
+        
         task = Task{
             do{
                 image = try await operation()
@@ -33,17 +35,18 @@ final class DetailViewModel : ObservableObject{
     }
     
     public func cancel(){
-        task?.cancel()
+        if let task{
+            task.cancel()
+        }
         task = nil
-        clear()
     }
     
-    // MARK: - Private
-    
-    private func clear(){
+    func clear(){
         error = nil
         image = nil
     }
+    
+    // MARK: - Private
     
     /// Handle error
     /// - Parameter error: Error
