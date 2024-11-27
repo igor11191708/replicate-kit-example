@@ -26,7 +26,7 @@ final class ReplicateClient : ObservableObject{
     func createPrediction(for input : InputModel) async throws -> Image{
         model = nil
         model = try await getModel(for: input)
-        
+
         guard let latest = model?.latestVersion else {
             throw Errors.latestVersionIsEmpty
         }
@@ -64,7 +64,7 @@ final class ReplicateClient : ObservableObject{
     /// - Parameter stringUrl: String url
     /// - Returns: Data for image
     private func loadData(for stringUrl : String) async throws -> Data{
-        
+
         guard let url = URL(string: stringUrl) else{
            throw Errors.urlOutputIsNotValid
         }
@@ -79,10 +79,24 @@ final class ReplicateClient : ObservableObject{
     
     // MARK: - Inner
     
-    enum Errors : Error, Hashable{
+    enum Errors: Error, Hashable, LocalizedError {
         case latestVersionIsEmpty
         case outputIsEmpty
         case imageInit
         case urlOutputIsNotValid
+
+        /// Provides a localized description for each error case.
+        var errorDescription: String? {
+            switch self {
+            case .latestVersionIsEmpty:
+                return NSLocalizedString("The latest version information is empty.", comment: "Error when the latest version is unavailable")
+            case .outputIsEmpty:
+                return NSLocalizedString("The output is empty.", comment: "Error when the output is missing or empty")
+            case .imageInit:
+                return NSLocalizedString("Failed to initialize the image.", comment: "Error when image initialization fails")
+            case .urlOutputIsNotValid:
+                return NSLocalizedString("The output URL is not valid.", comment: "Error when the provided output URL is invalid")
+            }
+        }
     }
 }
