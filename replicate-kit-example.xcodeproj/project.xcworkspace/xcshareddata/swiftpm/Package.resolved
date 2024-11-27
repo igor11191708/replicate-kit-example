@@ -1,10 +1,10 @@
 {
-  "originHash" : "3e97b666d3239e0923083f75802c6aaa4a99126825796963575aed8048eef27f",
+  "originHash" : "6c80d80fe8e79e7ea5e9366b2afafdbe272f3b37a37be3f3d135a506ab62575c",
   "pins" : [
     {
       "identity" : "async-http-client",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/The-Igor/async-http-client.git",
+      "location" : "https://github.com/igor11191708/async-http-client.git",
       "state" : {
         "revision" : "94d2573c14bb6b88110338a0f4f4cd7b0c6f3165",
         "version" : "1.4.7"
@@ -12,11 +12,11 @@
     },
     {
       "identity" : "replicate-kit-swift",
-      "kind" : "localSourceControl",
-      "location" : "/Users/igor/Documents/GitHub/replicate-kit-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/igor11191708/replicate-kit-swift",
       "state" : {
-        "revision" : "1b2583850bfa3f16ed611c48d61340fe5124b23d",
-        "version" : "1.0.1"
+        "branch" : "main",
+        "revision" : "807d9a7896de41ec0007f74005fbeb1e10b44bc8"
       }
     },
     {
