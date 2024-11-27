@@ -1,5 +1,5 @@
 {
-  "originHash" : "6c80d80fe8e79e7ea5e9366b2afafdbe272f3b37a37be3f3d135a506ab62575c",
+  "originHash" : "c14ad1b3d3e6027f586fa71ca76bd7f03e9615b83751d356d67f0b583a42ff1b",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -11,12 +11,21 @@
       }
     },
     {
+      "identity" : "async-task",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/igor11191708/async-task",
+      "state" : {
+        "revision" : "a0f47590be5417b7df6eaa6a5ad65f879aeede75",
+        "version" : "1.0.0"
+      }
+    },
+    {
       "identity" : "replicate-kit-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/igor11191708/replicate-kit-swift",
       "state" : {
         "branch" : "main",
-        "revision" : "807d9a7896de41ec0007f74005fbeb1e10b44bc8"
+        "revision" : "d7d10962a253f2f5b2287bd48967afe6275904e0"
       }
     },
     {

@@ -7,12 +7,13 @@
 
 import SwiftUI
 import replicate_kit_swift
+import async_task
 
 struct DetailView: View{
     
     @EnvironmentObject var viewModel : ReplicateClient
     
-    @StateObject private var detailModel = DetailViewModel()
+    @StateObject private var detailModel = SingleTaskViewModel<Image, ReplicateAPI.Errors>()
     
     @Binding var selected : InputModel
     
@@ -22,15 +23,15 @@ struct DetailView: View{
         VStack(alignment: .leading){
             HeaderTpl(selected: $selected, model: viewModel.model)
             Spacer()
-            if let image = detailModel.image{
+            if let image = detailModel.value{
                 image
                     .resizable()
                     .scaledToFit()
                 Spacer()
-            }else if let error = detailModel.error{
+            }else if let text = errorToText(detailModel.error){
                 Rectangle()
                     .fill(.clear)
-                    .overlay(Text(error))
+                    .overlay(Text(text))
                     .padding()
             }else{
                 Rectangle()
@@ -64,5 +65,16 @@ struct DetailView: View{
         detailModel.cancel()
     }
     
-
+    func errorToText(_ error : Error?) -> String?{
+        
+        if let e = error as? ReplicateClient.Errors,
+               e == .outputIsEmpty{
+            detailModel.clean()
+        }
+        
+        return error?.localizedDescription
+    }
 }
+
+
+
