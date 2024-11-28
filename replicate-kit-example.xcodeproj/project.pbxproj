@@ -473,7 +473,7 @@
 			repositoryURL = "https://github.com/igor11191708/async-task";
 			requirement = {
 				kind = exactVersion;
-				version = 1.1.0;
+				version = 1.2.0;
 			};
 		};
 		78FDE6B029BB720200615C31 /* XCRemoteSwiftPackageReference "some-codable-swift" */ = {
