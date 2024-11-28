@@ -2,18 +2,20 @@
 //  DetailView.swift
 //  replicate-kit-example
 //
-//  Created by Igor on 09.03.2023.
+//  Created by Igor Shelopaev on 09.03.2023.
 //
 
 import SwiftUI
 import replicate_kit_swift
 import async_task
 
+fileprivate typealias TaskModel = Async.SingleTask<Image, ReplicateAPI.Errors>
+
 struct DetailView: View{
     
     @EnvironmentObject var viewModel : ReplicateClient
     
-    @StateObject private var detailModel = SingleTaskViewModel<Image, ReplicateAPI.Errors>(errorHandler: errorHandler)
+    @StateObject private var taskModel = TaskModel(errorHandler: errorHandler)
     
     @Binding var selected : InputModel
     
@@ -23,12 +25,12 @@ struct DetailView: View{
         VStack(alignment: .leading){
             HeaderTpl(selected: $selected, model: viewModel.model)
             Spacer()
-            if let image = detailModel.value{
+            if let image = taskModel.value{
                 image
                     .resizable()
                     .scaledToFit()
                 Spacer()
-            }else if let text = errorToText(detailModel.error){
+            }else if let text = errorToText(taskModel.error){
                 Rectangle()
                     .fill(.clear)
                     .overlay(Text(text))
@@ -55,21 +57,21 @@ struct DetailView: View{
     
     // MARK: - Private
 
-    func start(by item : InputModel){
-        detailModel.start{
-            try await viewModel.createPrediction(for: item)
+    func start(by input : InputModel){
+        taskModel.start(with: input){ input in
+            try await viewModel.createPrediction(for: input)
         }
     }
     
     func cancel(){
-        detailModel.cancel()
+        taskModel.cancel()
     }
     
     func errorToText(_ error : Error?) -> String?{
         
         if let e = error as? ReplicateClient.Errors,
                e == .outputIsEmpty{
-            detailModel.clean()
+            taskModel.clean()
         }
         
         return error?.localizedDescription

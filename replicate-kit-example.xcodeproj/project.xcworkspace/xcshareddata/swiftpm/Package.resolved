@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/igor11191708/async-task",
       "state" : {
-        "revision" : "a0f47590be5417b7df6eaa6a5ad65f879aeede75",
-        "version" : "1.0.0"
+        "revision" : "af0207ac2de11f16e2a81c0a2ac5acbe8c833ae9",
+        "version" : "1.1.0"
       }
     },
     {
