@@ -15,7 +15,7 @@ struct DetailView: View{
     
     @EnvironmentObject var viewModel : ReplicateClient
     
-    @StateObject private var taskModel = TaskModel(errorHandler: errorHandler)
+    @StateObject private var taskModel = TaskModel(errorMapper: errorMapper)
     
     @Binding var selected : InputModel
     
@@ -78,7 +78,7 @@ struct DetailView: View{
 }
 
 @Sendable
-func errorHandler(_ error : Error?) -> ReplicateAPI.Errors?{
+func errorMapper(_ error : Error?) -> ReplicateAPI.Errors?{
     if let e = error as? ReplicateClient.Errors{
         return .clientError(e.localizedDescription)
     }
