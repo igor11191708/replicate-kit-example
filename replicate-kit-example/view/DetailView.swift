@@ -44,7 +44,6 @@ struct DetailView: View{
         .font(.title2)
         .padding()
         .onChange(of: selected){ item in
-            cancel()
            start(by: item)
         }
         .onAppear{

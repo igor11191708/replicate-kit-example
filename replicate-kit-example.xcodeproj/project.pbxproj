@@ -472,8 +472,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/igor11191708/async-task";
 			requirement = {
-				kind = exactVersion;
-				version = 1.2.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 		78FDE6B029BB720200615C31 /* XCRemoteSwiftPackageReference "some-codable-swift" */ = {
