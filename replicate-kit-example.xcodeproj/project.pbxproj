@@ -16,9 +16,9 @@
 		781E352E29B9BBBA00045C8E /* IModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E352D29B9BBBA00045C8E /* IModel.swift */; };
 		781E353529B9C6EB00045C8E /* ReplicateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E353429B9C6EB00045C8E /* ReplicateClient.swift */; };
 		781E353A29BA1ACC00045C8E /* InputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781E353929BA1ACC00045C8E /* InputModel.swift */; };
-		786796242CF7395700352F7A /* some-codable-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 786796232CF7395700352F7A /* some-codable-swift */; };
-		786796272CF739AD00352F7A /* replicate-kit-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 786796262CF739AD00352F7A /* replicate-kit-swift */; };
-		786796352CF73FCD00352F7A /* async-task in Frameworks */ = {isa = PBXBuildFile; productRef = 786796342CF73FCD00352F7A /* async-task */; };
+		787CFC4C2CF9C0F900A3866F /* some-codable-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 787CFC4B2CF9C0F900A3866F /* some-codable-swift */; };
+		787CFC4F2CF9C10400A3866F /* async-task in Frameworks */ = {isa = PBXBuildFile; productRef = 787CFC4E2CF9C10400A3866F /* async-task */; };
+		787CFC552CF9C1DD00A3866F /* replicate-kit-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 787CFC542CF9C1DD00A3866F /* replicate-kit-swift */; };
 		78B2704B29BC8CE500C88397 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B2704A29BC8CE500C88397 /* ImageHelper.swift */; };
 		78B2704D29BC91A300C88397 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78B2704C29BC91A300C88397 /* README.md */; };
 		78B2704F29BD982F00C88397 /* HeaderTpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B2704E29BD982F00C88397 /* HeaderTpl.swift */; };
@@ -46,9 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				786796242CF7395700352F7A /* some-codable-swift in Frameworks */,
-				786796352CF73FCD00352F7A /* async-task in Frameworks */,
-				786796272CF739AD00352F7A /* replicate-kit-swift in Frameworks */,
+				787CFC4F2CF9C10400A3866F /* async-task in Frameworks */,
+				787CFC4C2CF9C0F900A3866F /* some-codable-swift in Frameworks */,
+				787CFC552CF9C1DD00A3866F /* replicate-kit-swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,9 +172,9 @@
 			);
 			name = "replicate-kit-example";
 			packageProductDependencies = (
-				786796232CF7395700352F7A /* some-codable-swift */,
-				786796262CF739AD00352F7A /* replicate-kit-swift */,
-				786796342CF73FCD00352F7A /* async-task */,
+				787CFC4B2CF9C0F900A3866F /* some-codable-swift */,
+				787CFC4E2CF9C10400A3866F /* async-task */,
+				787CFC542CF9C1DD00A3866F /* replicate-kit-swift */,
 			);
 			productName = "replicate-kit-example";
 			productReference = 781E351329B9B13E00045C8E /* Replicate kit.app */;
@@ -205,9 +205,9 @@
 			);
 			mainGroup = 781E350A29B9B13E00045C8E;
 			packageReferences = (
-				78FDE6B029BB720200615C31 /* XCRemoteSwiftPackageReference "some-codable-swift" */,
-				786796252CF739AD00352F7A /* XCRemoteSwiftPackageReference "replicate-kit-swift" */,
-				786796332CF73FCD00352F7A /* XCRemoteSwiftPackageReference "async-task" */,
+				787CFC4A2CF9C0F900A3866F /* XCRemoteSwiftPackageReference "some-codable-swift" */,
+				787CFC4D2CF9C10400A3866F /* XCRemoteSwiftPackageReference "async-task" */,
+				787CFC532CF9C1DD00A3866F /* XCRemoteSwiftPackageReference "replicate-kit-swift" */,
 			);
 			productRefGroup = 781E351429B9B13E00045C8E /* Products */;
 			projectDirPath = "";
@@ -460,47 +460,47 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		786796252CF739AD00352F7A /* XCRemoteSwiftPackageReference "replicate-kit-swift" */ = {
+		787CFC4A2CF9C0F900A3866F /* XCRemoteSwiftPackageReference "some-codable-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/igor11191708/replicate-kit-swift";
+			repositoryURL = "https://github.com/swiftuiux/some-codable-swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		787CFC4D2CF9C10400A3866F /* XCRemoteSwiftPackageReference "async-task" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftuiux/async-task";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		786796332CF73FCD00352F7A /* XCRemoteSwiftPackageReference "async-task" */ = {
+		787CFC532CF9C1DD00A3866F /* XCRemoteSwiftPackageReference "replicate-kit-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/igor11191708/async-task";
+			repositoryURL = "https://github.com/swiftuiux/replicate-kit-swift";
 			requirement = {
 				branch = main;
 				kind = branch;
-			};
-		};
-		78FDE6B029BB720200615C31 /* XCRemoteSwiftPackageReference "some-codable-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/igor11191708/some-codable-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		786796232CF7395700352F7A /* some-codable-swift */ = {
+		787CFC4B2CF9C0F900A3866F /* some-codable-swift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 78FDE6B029BB720200615C31 /* XCRemoteSwiftPackageReference "some-codable-swift" */;
+			package = 787CFC4A2CF9C0F900A3866F /* XCRemoteSwiftPackageReference "some-codable-swift" */;
 			productName = "some-codable-swift";
 		};
-		786796262CF739AD00352F7A /* replicate-kit-swift */ = {
+		787CFC4E2CF9C10400A3866F /* async-task */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 786796252CF739AD00352F7A /* XCRemoteSwiftPackageReference "replicate-kit-swift" */;
-			productName = "replicate-kit-swift";
-		};
-		786796342CF73FCD00352F7A /* async-task */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 786796332CF73FCD00352F7A /* XCRemoteSwiftPackageReference "async-task" */;
+			package = 787CFC4D2CF9C10400A3866F /* XCRemoteSwiftPackageReference "async-task" */;
 			productName = "async-task";
+		};
+		787CFC542CF9C1DD00A3866F /* replicate-kit-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 787CFC532CF9C1DD00A3866F /* XCRemoteSwiftPackageReference "replicate-kit-swift" */;
+			productName = "replicate-kit-swift";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

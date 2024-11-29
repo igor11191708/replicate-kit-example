@@ -1,37 +1,37 @@
 {
-  "originHash" : "c14ad1b3d3e6027f586fa71ca76bd7f03e9615b83751d356d67f0b583a42ff1b",
+  "originHash" : "eaa2a1dce918dfda895d214350e1f4155035f86f093c4bde609d20135ea84733",
   "pins" : [
     {
       "identity" : "async-http-client",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/igor11191708/async-http-client.git",
+      "location" : "https://github.com/swiftuiux/async-http-client.git",
       "state" : {
-        "revision" : "94d2573c14bb6b88110338a0f4f4cd7b0c6f3165",
-        "version" : "1.4.7"
+        "revision" : "936a6e953d3c3e05a14c3d852fea9955e57c9854",
+        "version" : "1.5.0"
       }
     },
     {
       "identity" : "async-task",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/igor11191708/async-task",
+      "location" : "https://github.com/swiftuiux/async-task",
       "state" : {
         "branch" : "main",
-        "revision" : "4bb168cf212bcbb4719ed229fa8425dc6cf052ff"
+        "revision" : "1ec403b45ea45ca93855310ec83c5a30106fa5df"
       }
     },
     {
       "identity" : "replicate-kit-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/igor11191708/replicate-kit-swift",
+      "location" : "https://github.com/swiftuiux/replicate-kit-swift",
       "state" : {
         "branch" : "main",
-        "revision" : "b6c3cc630c0cbf586ab8759566efae19597135a2"
+        "revision" : "575bb78ce877a87e405e534729d957705153475e"
       }
     },
     {
       "identity" : "retry-policy-service",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/igor11191708/retry-policy-service.git",
+      "location" : "https://github.com/swiftuiux/retry-policy-service.git",
       "state" : {
         "revision" : "2a6a1f057fbf77337dfc73db98bd3d538127b3e2",
         "version" : "1.0.1"
@@ -40,7 +40,7 @@
     {
       "identity" : "some-codable-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/igor11191708/some-codable-swift.git",
+      "location" : "https://github.com/swiftuiux/some-codable-swift",
       "state" : {
         "revision" : "41ef20eb935c9829b2cb45be63de3d0220352d18",
         "version" : "1.0.1"
