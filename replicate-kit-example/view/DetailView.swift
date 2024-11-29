@@ -67,12 +67,6 @@ struct DetailView: View{
     }
     
     func errorToText(_ error : Error?) -> String?{
-        
-        if let e = error as? ReplicateClient.Errors,
-               e == .outputIsEmpty{
-            taskModel.clean()
-        }
-        
         return error?.localizedDescription
     }
 }
@@ -80,7 +74,7 @@ struct DetailView: View{
 @Sendable
 func errorMapper(_ error : Error?) -> ReplicateAPI.Errors?{
     if let e = error as? ReplicateClient.Errors{
-        return .clientError(e.localizedDescription)
+        return .clientError(e)
     }
     
     return nil
