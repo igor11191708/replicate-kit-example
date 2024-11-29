@@ -9,13 +9,13 @@ import SwiftUI
 import replicate_kit_swift
 import async_task
 
-fileprivate typealias TaskModel = Async.SingleTask<Image, ReplicateAPI.Errors>
+fileprivate typealias TaskModel = Async.ObservableSingleTask<Image, ReplicateAPI.Errors>
 
 struct DetailView: View{
     
     @EnvironmentObject var viewModel : ReplicateClient
     
-    @StateObject private var taskModel = TaskModel(errorMapper: errorMapper)
+    @State private var taskModel = TaskModel(errorMapper: errorMapper)
     
     @Binding var selected : InputModel
     
@@ -43,8 +43,8 @@ struct DetailView: View{
         }
         .font(.title2)
         .padding()
-        .onChange(of: selected){ item in
-           start(by: item)
+        .onChange(of: selected){ oldItem, newItem in
+           start(by: newItem)
         }
         .onAppear{
             start(by: selected)

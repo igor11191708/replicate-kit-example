@@ -19,7 +19,9 @@ struct ContentView: View {
                 .navigationDestination(for: InputModel.self){ value in  DetailView(selected : .constant(value))
                 }
         } detail: {
-            DetailView(selected : $selected)
+            #if os(macOS)
+                DetailView(selected : $selected)
+            #endif
           }
         .navigationSplitViewStyle(.balanced)
     }

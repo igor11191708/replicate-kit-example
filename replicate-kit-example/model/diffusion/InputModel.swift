@@ -40,20 +40,9 @@ let data : [InputModel] = [
         ]
     ),
     .init(
-        owner: "tstramer",
-        name: "classic-anim-diffusion",
-        params: ["prompt": "a photo of an astronaut riding a horse on mars"]
-    ),
-    .init(
         owner: "cjwbw",
         name: "analog-diffusion",
         params: ["prompt": "analog style closeup portrait of cowboy George Washington"
-        ]
-    ),
-    .init(
-        owner: "tstramer",
-        name: "archer-diffusion",
-        params: ["prompt": "archer style, a beautiful cat, highly detailed, 8K"
         ]
     ),
     .init(
@@ -72,11 +61,6 @@ let data : [InputModel] = [
         owner: "22-hours",
         name: "vintedois-diffusion",
         params: ["prompt": "victorian city landscape"]
-    ),
-    .init(
-        owner: "tstramer",
-        name: "tron-legacy-diffusion",
-        params: ["prompt": "city landscape in the style of trnlgcy"]
     ),
     .init(
         owner: "cjwbw",
